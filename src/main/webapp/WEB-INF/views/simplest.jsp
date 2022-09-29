@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Spring MVC Simple Application with Maven</title>
+  <title>Spring MVC Simple Application with Maven</title>
 </head>
 <body>
   <h2>Spring MVC</h2>
