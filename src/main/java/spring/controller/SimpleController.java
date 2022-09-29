@@ -16,7 +16,7 @@ public class SimpleController {
     @GetMapping("/hello")
     public String hello(Model model) {
         service.test();
-        model.addAttribute("user", "Eraskin Alexei");
+        model.addAttribute("user", "World!");
         return "simplest";
     }
 }
