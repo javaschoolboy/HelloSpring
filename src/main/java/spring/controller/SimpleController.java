@@ -16,7 +16,12 @@ public class SimpleController {
     @GetMapping("/hello")
     public String hello(Model model) {
         service.test();
-        model.addAttribute("user", "World!");
-        return "simplest";
+        model.addAttribute("name", "Spring!");
+        return "hello";
+    }
+
+    @GetMapping("/")
+    public String index(Model model) {
+        return "index";
     }
 }

@@ -2,10 +2,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Spring MVC Simple Application with Maven</title>
+    <title>Index page</title>
 </head>
 <body>
-  <h2>Spring MVC</h2>
-  <p>Hello, ${user}</p>
+    <h2>Index page</h2>
 </body>
 </html>
