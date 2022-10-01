@@ -1,12 +1,12 @@
 package spring.service;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class TestService {
 
     public void test() {
-        System.out.println("THIS IS TEST SERVICE");
+        System.out.println("TEST SERVICE: test");
     }
 
 }
