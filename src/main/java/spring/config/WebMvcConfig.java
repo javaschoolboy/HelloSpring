@@ -44,12 +44,12 @@ public class WebMvcConfig implements WebMvcConfigurer {
     }
 
     /*
-     * STEP 3 - Register ThymeleafViewResolver
+     * STEP 3 - Create ThymeleafViewResolver
      */
-    @Override
-    public void configureViewResolvers(ViewResolverRegistry registry) {
-        ThymeleafViewResolver resolver = new ThymeleafViewResolver();
-        resolver.setTemplateEngine(templateEngine());
-        registry.viewResolver(resolver);
+    @Bean
+    public ThymeleafViewResolver viewResolver() {
+        ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
+        viewResolver.setTemplateEngine(templateEngine());
+        return viewResolver;
     }
 }
