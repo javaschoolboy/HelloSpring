@@ -5,6 +5,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -21,7 +22,8 @@ public class WebMvcConfig implements WebMvcConfigurer {
     private ApplicationContext applicationContext;
 
     /*
-     * STEP 1 - Create SpringResourceTemplateResolver
+     *  THYMELEAF-SPECIFIC ARTIFACTS
+     *  TemplateResolver <- TemplateEngine <- ViewResolver
      */
     @Bean
     public SpringResourceTemplateResolver templateResolver() {
@@ -32,9 +34,6 @@ public class WebMvcConfig implements WebMvcConfigurer {
         return templateResolver;
     }
 
-    /*
-     * STEP 2 - Create SpringTemplateEngine
-     */
     @Bean
     public SpringTemplateEngine templateEngine() {
         SpringTemplateEngine templateEngine = new SpringTemplateEngine();
@@ -43,9 +42,6 @@ public class WebMvcConfig implements WebMvcConfigurer {
         return templateEngine;
     }
 
-    /*
-     * STEP 3 - Create ThymeleafViewResolver
-     */
     @Bean
     public ThymeleafViewResolver viewResolver() {
         ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
