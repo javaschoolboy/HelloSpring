@@ -4,6 +4,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+/**
+ * Before creating table:
+ * CREATE SEQUENCE hibernate_sequence START 1;
+ * 
+ * Creating table in database:
+ * CREATE TABLE person (id serial, firstname varchar(255), lastname varchar(255), PRIMARY KEY (id));
+ */
+
 @Entity
 public class Person {
 
