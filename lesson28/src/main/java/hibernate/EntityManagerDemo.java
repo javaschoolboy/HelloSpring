@@ -1,6 +1,8 @@
 package hibernate;
 
+import hibernate.domain.Category;
 import hibernate.domain.Person;
+import hibernate.domain.Product;
 import org.hibernate.cfg.Configuration;
 
 import javax.persistence.EntityManager;
@@ -16,12 +18,21 @@ public class EntityManagerDemo {
         // Из фабрики создаем EntityManager
         EntityManager em = factory.createEntityManager();
 
+        Category category = new Category("food");
+        em.getTransaction().begin();
+        em.persist(category);
+        em.getTransaction().commit();
+
+        Product product = new Product("chesse", category);
+        em.getTransaction().begin();
+        em.persist(product);
+        em.getTransaction().commit();
+
 //        List<Person> persons = em.createQuery("SELECT p FROM Person p WHERE p.firstName='Ivan'", Person.class).getResultList();
 //        System.out.println(persons);
 
-
-        add(em, "Ivan", "Ivanov");
-        add(em, "Petr", "Petrov");
+//        add(em, "Ivan", "Ivanov");
+//        add(em, "Petr", "Petrov");
 
 //        Person person = em.find(Person.class, 1);
 //        System.out.println(person);
