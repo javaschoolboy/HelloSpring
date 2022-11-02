@@ -10,15 +10,19 @@ import java.util.List;
 @Service
 public class PersonService {
 
-    @Autowired
-    private PersonRepository personRepository;
+    //@Autowired
+    final private PersonRepository personRepository;
+
+    public PersonService(PersonRepository personRepository) {
+        this.personRepository = personRepository;
+    }
 
     public void add(String firstName, String lastName) {
         Person person = new Person(firstName, lastName);
         personRepository.save(person);
     }
 
-    public List<Person> findByFirstname(String firstName) {
+    public List<Person> findByFirstName(String firstName) {
         return personRepository.findByFirstName(firstName);
     }
 }

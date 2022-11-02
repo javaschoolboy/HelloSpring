@@ -18,7 +18,7 @@ public class PersonService {
         personRepository.save(person);
     }
 
-    public List<Person> findByFirstname(String firstName) {
+    public List<Person> findByFirstName(String firstName) {
         return personRepository.findByFirstName(firstName);
     }
 }

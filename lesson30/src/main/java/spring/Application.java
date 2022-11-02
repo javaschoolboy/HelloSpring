@@ -15,10 +15,10 @@ public class Application {
         PersonService personService = (PersonService) context.getBean("personService");
 
         // add person
-        personService.add("Ivan", "Ivanov");
+        //personService.add("Ivan", "Ivanov");
 
         // find person
-        List<Person> persons = personService.findByFirstname("Ivan");
+        List<Person> persons = personService.findByFirstName("Ivan");
         System.out.println(persons);
 
         context.close();

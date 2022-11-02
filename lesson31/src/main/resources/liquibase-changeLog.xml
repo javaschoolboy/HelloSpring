@@ -19,26 +19,4 @@
         </createTable>
     </changeSet>
 
-    <!--<changeSet author="sergey" id="#2">
-        <createTable tableName="category">
-            <column name="category_id" type="int">
-                <constraints primaryKey="true" />
-            </column>
-            <column name="title" type="varchar(50)">
-                <constraints nullable="false" />
-            </column>
-        </createTable>
-        <createTable tableName="product">
-            <column name="product_id" type="int">
-                <constraints primaryKey="true" />
-            </column>
-            <column name="title" type="varchar(50)">
-                <constraints nullable="false" />
-            </column>
-            <column name="category_id" type="int">
-                <constraints nullable="false" />
-            </column>
-        </createTable>
-    </changeSet>-->
-
 </databaseChangeLog>
