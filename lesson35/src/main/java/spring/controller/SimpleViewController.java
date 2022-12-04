@@ -9,7 +9,7 @@ import spring.service.PersonService;
 import spring.util.StringUtil;
 
 @Controller
-public class SimpleWebController {
+public class SimpleViewController {
 
     @Autowired
     PersonService personService;
