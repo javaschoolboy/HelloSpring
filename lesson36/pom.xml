@@ -102,7 +102,7 @@
                             </inputSpec>
                             <generatorName>spring</generatorName>
                             <apiPackage>spring.controller</apiPackage>
-                            <modelPackage>spring.controller.vo</modelPackage>
+                            <modelPackage>spring.domain</modelPackage>
                             <supportingFilesToGenerate>
                                 RestApi.java
                             </supportingFilesToGenerate>
