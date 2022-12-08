@@ -10,17 +10,9 @@ import spring.service.PersonService;
 
 @RestController
 @RequestMapping("/api")
-public class RestSimpleController implements GetApi {
+public class RestSimpleController {
 
     @Autowired
     PersonService personService;
 
-    public ResponseEntity<Person> get(@PathVariable("id") Integer id) {
-        Person person = personService.findById(id);
-        if (person != null) {
-            return ResponseEntity.ok(person);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
-    }
 }

@@ -103,11 +103,9 @@
                             <generatorName>spring</generatorName>
                             <apiPackage>spring.controller</apiPackage>
                             <modelPackage>spring.domain</modelPackage>
-                            <supportingFilesToGenerate>
-                                RestApi.java
-                            </supportingFilesToGenerate>
                             <configOptions>
-                                <delegatePattern>true</delegatePattern>
+                                <interfaceOnly>true</interfaceOnly>
+                                <java8>false</java8>
                             </configOptions>
                         </configuration>
                     </execution>
