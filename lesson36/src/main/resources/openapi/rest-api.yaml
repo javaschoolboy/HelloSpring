@@ -9,12 +9,47 @@ tags:
     description: Simple rest CRUD API
 
 paths:
-  #/add:
-  #  post:
-  
-  #/getAll:
-  #  get:
-  
+  /add:
+    post:
+      tags:
+        - SimpleRest
+      summary: Add one record
+      description: Add one record
+      operationId: add
+      requestBody:
+        description: Data to add
+        required: true
+        content:
+          'application/json':
+            schema:
+              type: PersonVO
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: PersonVO
+        '404':
+          description: Request failed - No items
+
+  /getAll:
+    get:
+      tags:
+        - SimpleRest
+      summary: Get all records
+      description: Get all records
+      operationId: getAll
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: PersonVO
+
   /get/{id}:
     get:
       tags:
@@ -30,15 +65,50 @@ paths:
           content:
             application/json:
               schema:
-                type: Person
+                type: PersonVO
         '404':
           description: Request failed - No items
 
-  #/update/{id}:
-  #  put:
-  
-  #/delete/{id}:
-  #  delete:
+  /update/{id}:
+    put:
+      tags:
+        - SimpleRest
+      summary: Update one record
+      description: Update one record
+      operationId: update
+      parameters:
+        - $ref: '#/components/parameters/id'
+      requestBody:
+        description: Data to update
+        required: true
+        content:
+          'application/json':
+            schema:
+              type: PersonVO
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: PersonVO
+        '404':
+          description: Request failed - No items
+
+  /delete/{id}:
+    delete:
+      tags:
+        - SimpleRest
+      summary: Delete one record by id
+      description: Delete one record by id
+      operationId: delete
+      parameters:
+        - $ref: '#/components/parameters/id'
+      responses:
+        200:
+          description: Successful deleted
+        '404':
+          description: Request failed - No items
 
 components:
   parameters:
